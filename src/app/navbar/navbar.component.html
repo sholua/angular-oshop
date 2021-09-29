@@ -20,10 +20,16 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/shopping-cart">Shopping cart</a>
         </li>
-        <li *ngIf="!user" class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
-        <li *ngIf="user" ngbDropdown class="nav-item dropdown">
+        <ng-template #anonymouseUser>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+        </ng-template>
+        <li
+          *ngIf="user$ | async as user; else anonymouseUser"
+          ngbDropdown
+          class="nav-item dropdown"
+        >
           <a
             ngbDropdownToggle
             class="nav-link dropdown-toggle"
