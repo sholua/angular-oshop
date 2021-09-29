@@ -19,6 +19,7 @@ import { LoginComponent } from "./login/login.component";
 import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AuthService } from "./auth.service";
+import { UserService } from "./user.service";
 import {
   AuthGuardService as AuthGuard,
   AuthGuardService,
@@ -78,7 +79,7 @@ import {
       },
     ]),
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -12,5 +12,6 @@ export const environment = {
     storageBucket: "oshop-shol.appspot.com",
     messagingSenderId: "15082370638",
     appId: "1:15082370638:web:f7f30601a0bf09f989751f",
+    databaseURL: "https://oshop-shol-default-rtdb.firebaseio.com/",
   },
 };
