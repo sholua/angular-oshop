@@ -20,6 +20,7 @@ import { RouterModule } from "@angular/router";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AuthService } from "./auth.service";
 import { UserService } from "./user.service";
+import { AdminAuthGuardService as AdminAuthGuard } from "./admin-auth-guard.service";
 import {
   AuthGuardService as AuthGuard,
   AuthGuardService,
@@ -70,16 +71,16 @@ import {
       {
         path: "admin/products",
         component: AdminProductsComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, AdminAuthGuard],
       },
       {
         path: "admin/orders",
         component: AdminOrdersComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, AdminAuthGuard],
       },
     ]),
   ],
-  providers: [AuthService, AuthGuard, UserService],
+  providers: [AuthService, AuthGuard, AdminAuthGuard, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
