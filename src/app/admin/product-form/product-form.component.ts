@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { CategoryService } from "../../category.service";
 import { ProductService } from "../../product.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-product-form",
@@ -11,7 +12,8 @@ export class ProductFormComponent {
   categories$;
 
   constructor(
-    categoryService: CategoryService,
+    private router: Router,
+    private categoryService: CategoryService,
     private productService: ProductService
   ) {
     this.categories$ = categoryService.getCategories();
@@ -19,5 +21,6 @@ export class ProductFormComponent {
 
   save(product) {
     this.productService.create(product);
+    this.router.navigate(["/admin/products"]);
   }
 }
