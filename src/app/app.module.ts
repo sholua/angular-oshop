@@ -5,6 +5,7 @@ import { AngularFireDatabaseModule } from "angularfire2/database";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { environment } from "../environments/environment";
 import { CustomFormsModule } from "ng2-validation";
+import { DataTableModule } from "angular-4-data-table";
 
 import { AppComponent } from "./app.component";
 import { NavbarComponent } from "./navbar/navbar.component";
@@ -48,6 +49,7 @@ import { FormsModule } from "@angular/forms";
   ],
   imports: [
     BrowserModule,
+    DataTableModule,
     FormsModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
