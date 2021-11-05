@@ -5,7 +5,7 @@
         <label for="title">Title</label>
         <input
           #title="ngModel"
-          ngModel
+          [(ngModel)]="product.title"
           name="title"
           id="title"
           type="text"
@@ -26,7 +26,7 @@
             #price="ngModel"
             required
             [min]="0"
-            ngModel
+            [(ngModel)]="product.price"
             name="price"
             id="price"
             type="number"
@@ -43,7 +43,7 @@
       <div class="form-group">
         <label for="category">Category</label>
         <select
-          ngModel
+          [(ngModel)]="product.category"
           name="category"
           id="category"
           class="form-control"
@@ -71,7 +71,7 @@
           #imageUrl="ngModel"
           required
           url
-          ngModel
+          [(ngModel)]="product.imageUrl"
           name="imageUrl"
           id="imageUrl"
           type="text"
@@ -91,11 +91,15 @@
   </div>
   <div class="col-md-6">
     <div class="card" style="width: 18rem">
-      <img [src]="imageUrl.value" class="card-img-top" />
+      <img
+        [src]="product.imageUrl"
+        *ngIf="product.imageUrl"
+        class="card-img-top"
+      />
       <div class="card-body">
-        <h5 class="card-title">{{ title.value }}</h5>
-        <p class="card-text" *ngIf="price.value">
-          {{ price.value | currency: "USD":true }}
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text" *ngIf="product.price">
+          {{ product.price | currency: "USD":true }}
         </p>
       </div>
     </div>
