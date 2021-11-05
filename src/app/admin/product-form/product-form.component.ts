@@ -11,7 +11,7 @@ import "rxjs/add/operator/take";
 })
 export class ProductFormComponent {
   categories$;
-  product;
+  product = {};
   id;
 
   constructor(
