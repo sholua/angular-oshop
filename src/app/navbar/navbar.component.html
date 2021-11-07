@@ -18,7 +18,12 @@
           <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/shopping-cart">Shopping cart</a>
+          <a class="nav-link" routerLink="/shopping-cart"
+            >Shopping cart
+            <span class="badge badge-warning badge-pill">{{
+              shoppingCartItemCount
+            }}</span></a
+          >
         </li>
         <ng-template #anonymouseUser>
           <li class="nav-item">
