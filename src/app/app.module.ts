@@ -32,6 +32,7 @@ import { CategoryService } from "./category.service";
 import { ProductService } from "./product.service";
 import { FormsModule } from "@angular/forms";
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ProductFilterComponent } from './products/product-filter/product-filter
     LoginComponent,
     ProductFormComponent,
     ProductFilterComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,
