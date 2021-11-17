@@ -3,12 +3,19 @@
   <p>You have {{ cart.totalItemsCount }} items in your shopping cart.</p>
   <table class="table">
     <thead>
+      <th></th>
       <th>Product</th>
       <th class="text-center" style="width: 230px">Quantity</th>
       <th class="text-right">Price</th>
     </thead>
     <tbody>
       <tr *ngFor="let item of cart.items">
+        <td>
+          <div
+            [style.backgroundImage]="'url(' + item.imageUrl + ')'"
+            class="thumbnail"
+          ></div>
+        </td>
         <td>{{ item.title }}</td>
         <td>
           <product-quantity
@@ -21,6 +28,7 @@
     </tbody>
     <tfoot>
       <tr>
+        <th></th>
         <th></th>
         <th></th>
         <th class="text-right">{{ cart.totalPrice | currency: "USD":true }}</th>
