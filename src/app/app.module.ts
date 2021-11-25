@@ -11,10 +11,11 @@ import { CustomFormsModule } from "ng2-validation";
 import { AuthGuardService as AuthGuard } from "shared/services/auth-guard.service";
 
 import { environment } from "../environments/environment";
-import { AdminAuthGuardService as AdminAuthGuard } from "./admin/services/admin-auth-guard.service";
+import { AdminModule } from "./admin/admin.module";
 import { AdminOrdersComponent } from "./admin/components/admin-orders/admin-orders.component";
 import { AdminProductsComponent } from "./admin/components/admin-products/admin-products.component";
 import { ProductFormComponent } from "./admin/components/product-form/product-form.component";
+import { AdminAuthGuardService as AdminAuthGuard } from "./admin/services/admin-auth-guard.service";
 import { AppComponent } from "./app.component";
 import { CheckOutComponent } from "./check-out/check-out.component";
 import { HomeComponent } from "./home/home.component";
@@ -39,10 +40,7 @@ import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
     CheckOutComponent,
     OrderSuccessComponent,
     MyOrdersComponent,
-    AdminProductsComponent,
-    AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent,
     ProductFilterComponent,
     ShoppingCartSummaryComponent,
     ShippingFormComponent,
@@ -52,6 +50,7 @@ import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
     DataTableModule,
     FormsModule,
     SharedModule,
+    AdminModule,
     CustomFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
@@ -78,30 +77,9 @@ import { ShoppingCartComponent } from "./shopping-cart/shopping-cart.component";
         component: MyOrdersComponent,
         canActivate: [AuthGuard],
       },
-
-      {
-        path: "admin/products/new",
-        component: ProductFormComponent,
-        canActivate: [AuthGuard, AdminAuthGuard],
-      },
-      {
-        path: "admin/products/:id",
-        component: ProductFormComponent,
-        canActivate: [AuthGuard, AdminAuthGuard],
-      },
-      {
-        path: "admin/products",
-        component: AdminProductsComponent,
-        canActivate: [AuthGuard, AdminAuthGuard],
-      },
-      {
-        path: "admin/orders",
-        component: AdminOrdersComponent,
-        canActivate: [AuthGuard, AdminAuthGuard],
-      },
     ]),
   ],
-  providers: [AdminAuthGuard],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
