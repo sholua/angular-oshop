@@ -11,10 +11,10 @@ import { CustomFormsModule } from "ng2-validation";
 import { AuthGuardService as AuthGuard } from "shared/services/auth-guard.service";
 
 import { environment } from "../environments/environment";
-import { AdminAuthGuardService as AdminAuthGuard } from "./admin-auth-guard.service";
-import { AdminOrdersComponent } from "./admin/admin-orders/admin-orders.component";
-import { AdminProductsComponent } from "./admin/admin-products/admin-products.component";
-import { ProductFormComponent } from "./admin/product-form/product-form.component";
+import { AdminAuthGuardService as AdminAuthGuard } from "./admin/services/admin-auth-guard.service";
+import { AdminOrdersComponent } from "./admin/components/admin-orders/admin-orders.component";
+import { AdminProductsComponent } from "./admin/components/admin-products/admin-products.component";
+import { ProductFormComponent } from "./admin/components/product-form/product-form.component";
 import { AppComponent } from "./app.component";
 import { CheckOutComponent } from "./check-out/check-out.component";
 import { HomeComponent } from "./home/home.component";
