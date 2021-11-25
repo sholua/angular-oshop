@@ -3,8 +3,8 @@ import {
   AngularFireDatabase,
   FirebaseObjectObservable,
 } from "angularfire2/database";
-import { Product } from "./models/product";
-import { ShoppingCart } from "./models/shopping-cart";
+import { Product } from "shared/models/product";
+import { ShoppingCart } from "shared/models/shopping-cart";
 import "rxjs/add/operator/take";
 import "rxjs/add/operator/map";
 import { Observable } from "rxjs";
