@@ -11,7 +11,7 @@ import "rxjs/add/operator/take";
 })
 export class ProductFormComponent {
   categories$;
-  product = {};
+  product = { title: "", price: 0, category: "", imageUrl: "" };
   id;
 
   constructor(
@@ -24,7 +24,7 @@ export class ProductFormComponent {
 
     this.id = this.route.snapshot.paramMap.get("id");
     if (this.id)
-      this.product = this.productService
+      this.productService
         .get(this.id)
         .take(1)
         .subscribe((p) => (this.product = p));
